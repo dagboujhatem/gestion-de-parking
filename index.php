@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php session_start() ?>
-<?php 
+<?php
 	if(!isset($_SESSION['login_id']))
 	    header('location:login.php');
     include 'db_connect.php';
@@ -15,7 +15,7 @@
   }
   ob_end_flush();
 
-	include 'header.php' 
+	include 'header.php'
 ?>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -23,7 +23,7 @@
   <?php include 'sidebar.php' ?>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper custom-wapper">
   	 <div class="toast" id="alert_toast" role="alert" aria-live="assertive" aria-atomic="true">
 	    <div class="toast-body text-white">
 	    </div>
@@ -34,20 +34,17 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-           
-			<h1> 
-          </div><!-- /.col -->
-
-        </div><!-- /.row -->
-            <hr class="border-primary">
-      </div><!-- /.container-fluid -->
+			<h1>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- /.content-header -->
 
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-         <?php 
+         <?php
             $page = isset($_GET['page']) ? $_GET['page'] : 'home';
             if(!file_exists($page.".php")){
                 include '404.html';
@@ -122,8 +119,8 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <footer class="main-footer">
-   
+  <footer class="main-footer custom-footer">
+
 
     <div class="float-right d-none d-sm-inline-block">
     <h4>  <b>  Smart Fouriére </h4> </b>

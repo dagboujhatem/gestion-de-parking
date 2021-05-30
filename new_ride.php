@@ -3,13 +3,13 @@
   textarea{
     resize: none;
   }
-  
+
 </style>
 
 <div class="col-lg-12">
-	<div class="card card-outline card-primary">
+	<div class="card custom-card">
 		<div class="card-body">
-		
+
 			<form action="" id="manage-ride">
         <input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
         <div class="row">
@@ -33,7 +33,7 @@
         </div>
       </form>
   	</div>
-  	<div class="card-footer border-top border-info">
+  	<div class="card-footer">
   		<div class="d-flex w-100 justify-content-center align-items-center">
   			<button class="btn btn-flat  bg-gradient-primary mx-2" form="manage-ride">Save</button>
   			<a class="btn btn-flat bg-gradient-secondary mx-2" href="./index.php?page=ride_list">Cancel</a>

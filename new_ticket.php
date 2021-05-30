@@ -5,7 +5,7 @@
   }
 </style>
 <div class="col-lg-12">
-	<div class="card card-outline card-primary">
+	<div class="card custom-card">
 		<div class="card-body">
 			<form action="" id="manage-ticket">
         <input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
@@ -25,7 +25,7 @@
                 <label for="" class="control-label">Matricule De Votre Voiture</label>
                 <select name="pricing_id" id="pricing_id" class="form-control form-control-sm select2" required >
                   <option value=""></option>
-                  <?php 
+                  <?php
                     $ride['all'] = "All";
                     $ride[0] = "None";
                     $rides = $conn->query("SELECT * FROM rides order by ride asc");
@@ -33,7 +33,7 @@
                       $ride[$row['id']] = ucwords($row['ride']);
                     }
                     $pricing = $conn->query("SELECT * FROM pricing order by name asc");
-                    while($row=$pricing->fetch_assoc()): 
+                    while($row=$pricing->fetch_assoc()):
                   ?>
                   <option value="<?php echo $row['id'] ?>" data-json='<?php echo json_encode($row) ?>' <?php echo isset($pricing_id) && $pricing_id == $row['id'] ?"selected": ""  ?>><?php echo ucwords($row['name'].'('.$ride[$row['ride_id']].')') ?></option>
                   <?php endwhile; ?>
@@ -95,7 +95,7 @@
         </div>
       </form>
   	</div>
-  	<div class="card-footer border-top border-info">
+  	<div class="card-footer">
   		<div class="d-flex w-100 justify-content-center align-items-center">
   			<button class="btn btn-flat  bg-gradient-primary mx-2" form="manage-ticket">Save</button>
   			<a class="btn btn-flat bg-gradient-secondary mx-2" href="./index.php?page=ticket_list">Cancel</a>
@@ -140,7 +140,7 @@
           tendered = tendered.replace(/,/g,'')
           amount = amount > 0 ? amount : 0;
           tendered = tendered > 0 ? tendered : 0;
-      var change = parseFloat(tendered) - parseFloat(amount) 
+      var change = parseFloat(tendered) - parseFloat(amount)
         $('#change').val(parseFloat(change).toLocaleString("en-US",{style:"decimal",minimumFractionDigits:2,maximumFractionDigits:2}))
 
   }

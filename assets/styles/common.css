@@ -1,0 +1,25 @@
+/* add background image to all dashboard pages */
+body {
+    background: #999;
+    padding: 40px;
+    font-family: "Open Sans Condensed", sans-serif;
+    background: url('../images/Smp.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+/* content in all card */
+.custom-wapper {
+    background-color: transparent !important;
+}
+
+.custom-card{
+    background-color: transparent !important;
+    color: #fff !important;
+}
+
+/* delete footer background */
+.custom-footer {
+    background-color: transparent !important;
+    border-top: none !important;
+    color: #fff !important;
+}
+

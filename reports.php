@@ -1,9 +1,9 @@
 <?php include 'db_connect.php' ?>
 <div class="col-lg-12">
-	<div class="card card-outline card-primary">
+	<div class="card custom-card">
 		<div class="card-body">
 			<div class="d-flex w-100 px-1 py-2 justify-content-center align-items-center">
-			<?php 
+			<?php
 			$status_arr = array("Item Accepted by Courier","Collected","Shipped","In-Transit","Arrived At Destination","Out for Delivery","Ready to Pickup","Delivered","Picked-up","Unsuccessfull Delivery Attempt"); ?>
 				<label for="date_from" class="mx-1">From</label>
                 <input type="date" id="date_from" class="form-control form-control-sm col-sm-3" value="<?php echo isset($_GET['date_from']) ? date("Y-m-d",strtotime($_GET['date_from'])) : '' ?>">
@@ -15,14 +15,14 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12 ">
-			<div class="card">
+			<div class="card custom-card">
 				<div class="card-body">
 					<div class="row">
 						<div class="col-md-12">
         					<button type="button" class="btn btn-success float-right" style="display: none" id="print"><i class="fa fa-print"></i> Print</button>
 						</div>
-					</div>	
-					
+					</div>
+
 					<table class="table table-bordered" id="report-list">
 						<thead>
 							<tr>
@@ -38,7 +38,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							
+
 						</tbody>
 						<tfoot>
 							<th colspan="8">Total Sale</th>
@@ -47,7 +47,7 @@
 					</table>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 </div>

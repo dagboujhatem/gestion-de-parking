@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
+<?php
 session_start();
 include('./db_connect.php');
   ob_start();
@@ -13,51 +13,33 @@ include('./db_connect.php');
   // }
   ob_end_flush();
 ?>
-<?php 
+<?php
 if(isset($_SESSION['login_id']))
 header("location:index.php?page=home");
 
 ?>
 <?php include 'header.php' ?>
+<link rel="stylesheet" href="assets/styles/login.css">
 <body class="hold-transition login-page bg-black">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="#" class="text-white"><b><?php echo $_SESSION['system']['name'] ?> - Admin</b></a>
-  </div>
+<div class="login-logo custom-login-logo mb-4 pb-3">
+    <a href="#" class="text-white text-uppercase"><b><?php echo $_SESSION['system']['name'] ?></b></a>
+ </div>
+<div class="login-box custom-login-box">
   <!-- /.login-logo -->
-  <div class="card">
+  <div class="card ">
     <div class="card-body login-card-body">
+      <center class="text-white h4 login-text mb-3"> Login </center>
       <form action="" id="login-form">
-        <div class="input-group mb-3">
-          <input type="email" class="form-control" name="email" required placeholder="Email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
+        <div class="form-group mb-3">
+          <input type="email" class="form-control custom-input" name="email" required placeholder="Email">
         </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" name="password" required placeholder="Password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
+        <div class="form-group mb-3">
+          <input type="password" class="form-control custom-input" name="password" required placeholder="Password">
         </div>
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
+          <div class="col-12">
+            <button type="submit" class="btn login-btn btn-block">Sign In</button>
           </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-          </div>
-          <!-- /.col -->
         </div>
       </form>
     </div>

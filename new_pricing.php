@@ -5,7 +5,7 @@
   }
 </style>
 <div class="col-lg-12">
-	<div class="card card-outline card-primary">
+	<div class="card custom-card">
 		<div class="card-body">
 			<form action="" id="manage-pricing">
         <input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
@@ -27,9 +27,9 @@
                   <option value=""></option>
                   <option value="0" <?php echo isset($ride_id) && $ride_id == 0 ? "selected" : '' ?>>None</option>
                   <option value="all" <?php echo isset($ride_id) && $ride_id == 'all' ? "selected" : '' ?>>All</option>
-                  <?php 
+                  <?php
                     $rides = $conn->query("SELECT * FROM rides order by ride asc");
-                    while($row=$rides->fetch_assoc()): 
+                    while($row=$rides->fetch_assoc()):
                   ?>
                   <option value="<?php echo $row['id'] ?>"><?php echo ucwords($row['ride']) ?></option>
                   <?php endwhile; ?>
@@ -51,7 +51,7 @@
         </div>
       </form>
   	</div>
-  	<div class="card-footer border-top border-info">
+  	<div class="card-footer">
   		<div class="d-flex w-100 justify-content-center align-items-center">
   			<button class="btn btn-flat  bg-gradient-primary mx-2" form="manage-pricing">Save</button>
   			<a class="btn btn-flat bg-gradient-secondary mx-2" href="./index.php?page=pricing_list">Cancel</a>

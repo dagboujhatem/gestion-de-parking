@@ -1,9 +1,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <?php 
+  <?php
   date_default_timezone_set("Asia/Manila");
-  
+
   ob_start();
   $title = isset($_GET['page']) ? ucwords(str_replace("_", ' ', $_GET['page'])) : "Acceuil";
   $title = str_replace("Persons Companies","Persons/Companies",$title);
@@ -44,5 +44,6 @@
   <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
  <!-- summernote -->
   <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
-  
+  <link rel="stylesheet" href="assets/styles/common.css">
+
 </head>

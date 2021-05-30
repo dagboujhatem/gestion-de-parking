@@ -1,7 +1,7 @@
 <?php
 ?>
 <div class="col-lg-12">
-	<div class="card">
+	<div class="card custom-card">
 		<div class="card-body">
 			<form action="" id="manage_user">
 				<input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
@@ -28,7 +28,7 @@
 						<?php endif; ?>
 					</div>
 					<div class="col-md-6">
-						
+
 						<div class="form-group">
 							<label class="control-label">Email</label>
 							<input type="email" class="form-control form-control-sm" name="email" required value="<?php echo isset($email) ? $email : '' ?>">

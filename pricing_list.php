@@ -1,6 +1,6 @@
 <?php include'db_connect.php' ?>
 <div class="col-lg-12">
-	<div class="card card-outline card-primary">
+	<div class="card custom-card">
 		<div class="card-header">
 			<div class="card-tools">
 				<a class="btn btn-block btn-sm btn-default btn-flat border-primary " href="./index.php?page=new_pricing"><i class="fa fa-plus"></i> Add New</a>
@@ -53,7 +53,7 @@
 		                        </button>
 	                      </div>
 						</td>
-					</tr>	
+					</tr>
 				<?php endwhile; ?>
 				</tbody>
 			</table>
