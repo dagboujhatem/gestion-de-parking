@@ -4,14 +4,15 @@
 namespace firebase\models;
 require_once './vendor/autoload.php';
 
-class User
+class FirebaseResource
 {
     protected $database;
-    protected $dbname = 'users'; // Name of the Firebase Table
+    protected $dbname; // Name of the Firebase Table
 
-    public function __construct($firebase) {
+    public function __construct($firebase, $resource) {
 
         $this->database = $firebase->createDatabase();
+        $this->dbname = $resource;
     }
 
     /**

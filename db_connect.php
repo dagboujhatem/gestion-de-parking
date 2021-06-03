@@ -2,31 +2,42 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 require_once './vendor/autoload.php';
-require_once './Firebase/User.php';
-
-use firebase\models\User;
-use Kreait\Firebase\Factory;
+require_once './Firebase/firebaseSync.php';
+/**
+ *  Create an SQL connection
+ */
 
 $conn= new mysqli('localhost','root','','tpts_db')or die("Could not connect to mysql".mysqli_error($con));
 
 /**
- * create firebase config
+ *  Begin sync of all tables
  */
-
-$firebase = (new Factory)->withServiceAccount(__DIR__ . './secret/parking-81cb5-firebase-adminsdk-rnt56-1916e91393.json')
-    ->withDatabaseUri('https://parking-81cb5-default-rtdb.europe-west1.firebasedatabase.app');
 
 // select all users from sql database
 $userQuery = $conn->query("SELECT * FROM users");
-while($row= $userQuery->fetch_assoc()):
-    // create firebase user
-    $firebaseUser = new User($firebase);
-    //// Adding the data to the database
-    $firebaseUser->insert([$row['id'] => $row]);
-endwhile;
+firebaseSync($userQuery, 'users');
 
+// select all pricing from sql database
+$pricingQuery = $conn->query("SELECT * FROM pricing");
+firebaseSync($pricingQuery, 'pricing');
+
+// select all rides from sql database
+$ridesQuery = $conn->query("SELECT * FROM rides");
+firebaseSync($ridesQuery, 'rides');
+
+// select all system_settings from sql database
+$systemSettingsQuery = $conn->query("SELECT * FROM system_settings");
+firebaseSync($systemSettingsQuery, 'system_settings');
+
+// select all ticket_items from sql database
+$ticketItemsQuery = $conn->query("SELECT * FROM ticket_items");
+firebaseSync($ticketItemsQuery, 'ticket_items');
+
+// select all ticket_list from sql database
+$ticketListQuery = $conn->query("SELECT * FROM ticket_list");
+firebaseSync($ticketListQuery, 'ticket_list');
 
 //var_dump($user->get(1)); // pull the data from the database
 
 //var_dump($user->delete(3)); // deleting data from the database
-//die();
+// die();
