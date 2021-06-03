@@ -36,8 +36,3 @@ firebaseSync($ticketItemsQuery, 'ticket_items');
 // select all ticket_list from sql database
 $ticketListQuery = $conn->query("SELECT * FROM ticket_list");
 firebaseSync($ticketListQuery, 'ticket_list');
-
-//var_dump($user->get(1)); // pull the data from the database
-
-//var_dump($user->delete(3)); // deleting data from the database
-// die();
