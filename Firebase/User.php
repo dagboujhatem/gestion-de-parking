@@ -2,18 +2,14 @@
 
 
 namespace firebase\models;
-
 require_once './vendor/autoload.php';
-use Kreait\Firebase\Factory;
 
 class User
 {
     protected $database;
     protected $dbname = 'users'; // Name of the Firebase Table
 
-    public function __construct() {
-        $firebase = (new Factory)->withServiceAccount(__DIR__ . './parking-81cb5-firebase-adminsdk-rnt56-1916e91393.json')
-            ->withDatabaseUri('https://parking-81cb5-default-rtdb.europe-west1.firebasedatabase.app');
+    public function __construct($firebase) {
 
         $this->database = $firebase->createDatabase();
     }
@@ -70,18 +66,3 @@ class User
         }
     }
 }
-
-
-$user = new User();
-
-// Adding the data to the database
-var_dump($user->insert([
-    '1' => ["nom"=> "hatem", "prenom"=> "dagbouj"],
-    '2' => 'Input 2.2',
-    '3' => 'Input 3.3'
-]));
-
- var_dump($user->get(1)); // pull the data from the database
-
- var_dump($user->delete(3)); // deleting data from the database
-die();
