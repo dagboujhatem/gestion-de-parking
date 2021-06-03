@@ -1,0 +1,15 @@
+{
+    "name": "nitro/gestion-de-parking",
+    "description": "smart parking with php and sql",
+    "type": "project",
+    "require": {
+        "kreait/firebase-php": "^5.20"
+    },
+    "license": "INC",
+    "authors": [
+        {
+            "name": "dagbouj hatem",
+            "email": "dagboujhatem@gmail.com"
+        }
+    ]
+}
